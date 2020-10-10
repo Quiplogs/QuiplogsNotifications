@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiplogs.Notifications", "Quiplogs.Notifications.csproj", "{8A68F724-955D-4331-BB48-2EBAD84D375D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quiplogs.Notifications.Email", "Quiplogs.Notifications.Email\Quiplogs.Notifications.Email.csproj", "{94525188-CFF0-482A-A88F-DB34C57183D7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quiplogs.Notifications.Send", "Quiplogs.Notifications.Send\Quiplogs.Notifications.Send.csproj", "{F542D0BF-AFDC-4BE5-A616-624329D61057}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quiplogs.Notifications.Process", "Quiplogs.Notifications.Process\Quiplogs.Notifications.Process.csproj", "{87A1CE6C-E264-481E-AF7B-4A71B160268C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quiplogs.Notifications.Queue", "Quiplogs.Notifications.Queue\Quiplogs.Notifications.Queue.csproj", "{CCE35A52-CB8B-490F-93BA-BC0F059319BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiplogs.Notifications.ConsoleApp", "Quiplogs.Notifications.ConsoleApp\Quiplogs.Notifications.ConsoleApp.csproj", "{A8E46BFF-8B01-4288-BBBC-1364BD6DAA74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +19,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8A68F724-955D-4331-BB48-2EBAD84D375D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A68F724-955D-4331-BB48-2EBAD84D375D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A68F724-955D-4331-BB48-2EBAD84D375D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A68F724-955D-4331-BB48-2EBAD84D375D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94525188-CFF0-482A-A88F-DB34C57183D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94525188-CFF0-482A-A88F-DB34C57183D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94525188-CFF0-482A-A88F-DB34C57183D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94525188-CFF0-482A-A88F-DB34C57183D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F542D0BF-AFDC-4BE5-A616-624329D61057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F542D0BF-AFDC-4BE5-A616-624329D61057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F542D0BF-AFDC-4BE5-A616-624329D61057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F542D0BF-AFDC-4BE5-A616-624329D61057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87A1CE6C-E264-481E-AF7B-4A71B160268C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87A1CE6C-E264-481E-AF7B-4A71B160268C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87A1CE6C-E264-481E-AF7B-4A71B160268C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87A1CE6C-E264-481E-AF7B-4A71B160268C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE35A52-CB8B-490F-93BA-BC0F059319BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE35A52-CB8B-490F-93BA-BC0F059319BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCE35A52-CB8B-490F-93BA-BC0F059319BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE35A52-CB8B-490F-93BA-BC0F059319BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E46BFF-8B01-4288-BBBC-1364BD6DAA74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E46BFF-8B01-4288-BBBC-1364BD6DAA74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E46BFF-8B01-4288-BBBC-1364BD6DAA74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E46BFF-8B01-4288-BBBC-1364BD6DAA74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
