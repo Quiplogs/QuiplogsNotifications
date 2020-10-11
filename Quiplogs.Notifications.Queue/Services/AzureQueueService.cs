@@ -1,7 +1,9 @@
 ﻿using Azure.Storage.Queues;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using NLog;
 using Quiplogs.Notifications.Queue.Interfaces;
-using Quiplogs.Notifications.Queue.Models;
+using Quiplogs.Notifications.Utilities.Configuration;
 using System;
 
 namespace Quiplogs.Notifications.Queue.Services
@@ -15,28 +17,23 @@ namespace Quiplogs.Notifications.Queue.Services
             _configuration = configuration;
         }
 
-        public void Put()
+        public async void Put(string message)
         {
             try
             {
-                // Get the connection string from app settings
-                var config = _configuration.GetSection("AppSettings:QuiplogsNotifications:Send").Get<QueueConfiguration>();
+                var config = _configuration.GetSection("AppSettings:QuiplogsNotifications:Azure").Get<AzureQueue>();
+                QueueClient queueClient = new QueueClient(config.DataConnectionString, config.EmailQueueName);
 
-                // Instantiate a QueueClient which will be used to create and manipulate the queue
-                QueueClient queueClient = new QueueClient(config.DataConnectionString, "emailQueue");
-
-                // Create the queue
                 queueClient.CreateIfNotExists();
 
                 if (queueClient.Exists())
                 {
-                }
-                else
-                {
+                    await queueClient.SendMessageAsync(message);
                 }
             }
             catch (Exception ex)
             {
+                //log exception
             }
         }
     }

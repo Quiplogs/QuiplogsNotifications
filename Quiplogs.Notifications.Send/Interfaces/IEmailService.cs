@@ -1,7 +1,9 @@
-﻿namespace Quiplogs.Notifications.Send.Interfaces
+﻿using Quiplogs.Notifications.Email.Interfaces;
+
+namespace Quiplogs.Notifications.Send.Interfaces
 {
     public interface IEmailService
     {
-        void Process();
+        void Process(IEmail email);
     }
 }

@@ -2,6 +2,6 @@
 {
     public interface IAzureQueueService
     {
-        void Put();
+        void Put(string message);
     }
 }

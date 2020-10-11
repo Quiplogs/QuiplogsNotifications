@@ -17,7 +17,9 @@ namespace Quiplogs.Notifications.Send
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<EmailService>().As<IEmailService>();
+            builder.RegisterType<EmailService>()
+                .As<IEmailService>()
+                .WithParameter(new TypedParameter(typeof(IConfiguration), this.configuration));
 
             builder.RegisterModule(new QueueModule(this.configuration));
         }
