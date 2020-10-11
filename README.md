@@ -1,2 +1,2 @@
-# Quiplogs_Notifications
+# Quiplogs Notifications
 Notifications Dll
