@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Quiplogs.Notifications.Queue
+namespace Quiplogs.Notifications.Queue.Models
 {
     public class Put
     {

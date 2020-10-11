@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quiplogs.Notifications.Queu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiplogs.Notifications.ConsoleApp", "Quiplogs.Notifications.ConsoleApp\Quiplogs.Notifications.ConsoleApp.csproj", "{A8E46BFF-8B01-4288-BBBC-1364BD6DAA74}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiplogs.Notifications.Utilities", "Quiplogs.Notifications.Utilities\Quiplogs.Notifications.Utilities.csproj", "{D0C067A2-369C-4B8F-BD61-6232D549311F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A8E46BFF-8B01-4288-BBBC-1364BD6DAA74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8E46BFF-8B01-4288-BBBC-1364BD6DAA74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8E46BFF-8B01-4288-BBBC-1364BD6DAA74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0C067A2-369C-4B8F-BD61-6232D549311F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0C067A2-369C-4B8F-BD61-6232D549311F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0C067A2-369C-4B8F-BD61-6232D549311F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0C067A2-369C-4B8F-BD61-6232D549311F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

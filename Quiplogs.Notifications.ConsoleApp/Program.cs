@@ -1,5 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
-using System;
+﻿using Autofac;
+using Microsoft.Extensions.Configuration;
+using Quiplogs.Notifications.Send;
+using Quiplogs.Notifications.Send.Interfaces;
 
 namespace Quiplogs.Notifications.ConsoleApp
 {
@@ -9,9 +11,14 @@ namespace Quiplogs.Notifications.ConsoleApp
         {
             IConfiguration Configuration = new ConfigurationBuilder()
                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-               .AddEnvironmentVariables()
-               .AddCommandLine(args)
                .Build();
+
+            var builder = new ContainerBuilder();
+            builder.RegisterModule(new SendNotificationModule(Configuration));
+            var container = builder.Build();
+
+            var emailService = container.Resolve<IEmailService>();
+            emailService.Process();
         }
     }
 }
