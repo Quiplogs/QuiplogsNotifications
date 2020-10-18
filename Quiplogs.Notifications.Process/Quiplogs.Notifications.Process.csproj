@@ -4,4 +4,14 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.0.0" />
+    <PackageReference Include="SendGrid" Version="9.21.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Quiplogs.Notifications.Email\Quiplogs.Notifications.Email.csproj" />
+    <ProjectReference Include="..\Quiplogs.Notifications.Utilities\Quiplogs.Notifications.Utilities.csproj" />
+  </ItemGroup>
+
 </Project>
