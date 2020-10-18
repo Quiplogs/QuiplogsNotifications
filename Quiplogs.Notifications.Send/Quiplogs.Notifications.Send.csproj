@@ -4,6 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Description>Send Notifications to an Azure Storage Queue</Description>
     <RepositoryUrl>https://github.com/Sl1ver/QuiplogsNotifications.git</RepositoryUrl>
+    <Authors>Jonathan Meyer</Authors>
+    <Company>Quiplogs</Company>
+    <Product>Quiplogs Notifications</Product>
   </PropertyGroup>
 
   <ItemGroup>

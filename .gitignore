@@ -3,3 +3,5 @@ obj/
 bin/
 NuGet.Config
 .vs/Quiplogs.Notifications/DesignTimeBuild/.dtbcache.v2
+.vs/Quiplogs.Notifications/DesignTimeBuild/.dtbcache.v2
+NuGet.Config

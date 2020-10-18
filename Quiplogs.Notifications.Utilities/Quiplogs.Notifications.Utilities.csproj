@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Jonathan Meyer</Authors>
+    <Company>Quiplogs</Company>
+    <Product>Quiplogs Notifications</Product>
+    <Description>Utilities utilised by other Quiplogs.Notification nuget packages</Description>
+    <RepositoryUrl>https://github.com/Sl1ver/QuiplogsNotifications.git</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
