@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using Microsoft.Extensions.Configuration;
-using Quiplogs.Notifications.Email.Interfaces;
+using Quiplogs.Notifications.Email.Models;
 using Quiplogs.Notifications.Send;
 using Quiplogs.Notifications.Send.Interfaces;
 using System.Collections.Generic;
@@ -22,7 +22,7 @@ namespace Quiplogs.Notifications.ConsoleApp
             var tags = new Dictionary<string, string>();
             tags.Add("firstName", "Jonathan");
 
-            var email = new TestMail
+            var email = new EmailWithTemplate
             {
                 TemplateId = "12345667",
                 FromEmailAddress = "test@from.com",
@@ -32,18 +32,8 @@ namespace Quiplogs.Notifications.ConsoleApp
                 ReplacementTags = tags
             };
 
-            var emailService = container.Resolve<IEmailService>();
-            emailService.Process(email);
+            var emailService = container.Resolve<ISendService>();
+            emailService.SendNotification(email);
         }
-    }
-
-    public class TestMail : IEmail
-    {
-        public string TemplateId { get; set; }
-        public string FromEmailAddress { get; set; }
-        public string FromName { get; set; }
-        public string ToEmailAddress { get; set; }
-        public string ToName { get; set; }
-        public Dictionary<string, string> ReplacementTags { get; set; }
     }
 }

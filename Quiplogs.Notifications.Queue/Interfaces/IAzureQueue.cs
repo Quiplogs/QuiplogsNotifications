@@ -1,7 +1,9 @@
-﻿namespace Quiplogs.Notifications.Queue.Interfaces
+﻿using System.Threading.Tasks;
+
+namespace Quiplogs.Notifications.Queue.Interfaces
 {
     public interface IAzureQueueService
     {
-        void Put(string message);
+        Task Put(string message);
     }
 }

@@ -1,9 +1,10 @@
 ﻿using Quiplogs.Notifications.Email.Interfaces;
+using System.Threading.Tasks;
 
 namespace Quiplogs.Notifications.Send.Interfaces
 {
     public interface IEmailService
     {
-        void Process(IEmail email);
+        Task AddEmailToQueueAsync(IEmail email);
     }
 }

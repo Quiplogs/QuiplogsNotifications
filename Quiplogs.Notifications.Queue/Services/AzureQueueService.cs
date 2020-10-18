@@ -1,28 +1,31 @@
 ﻿using Azure.Storage.Queues;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
-using NLog;
 using Quiplogs.Notifications.Queue.Interfaces;
 using Quiplogs.Notifications.Utilities.Configuration;
 using System;
+using System.Threading.Tasks;
 
 namespace Quiplogs.Notifications.Queue.Services
 {
     public class AzureQueueService : IAzureQueueService
     {
-        private IConfiguration _configuration;
+        private readonly AzureQueueConfiguration _azureConfiguration;
 
         public AzureQueueService(IConfiguration configuration)
         {
-            _configuration = configuration;
+            var config = configuration.GetSection("AppSettings:QuiplogsNotifications:Azure").Get<AzureQueueConfiguration>();
+
+            if (config == null)
+                throw new Exception("No Azure configuration was found");
+            else
+                _azureConfiguration = config;
         }
 
-        public async void Put(string message)
+        public async Task Put(string message)
         {
             try
             {
-                var config = _configuration.GetSection("AppSettings:QuiplogsNotifications:Azure").Get<AzureQueue>();
-                QueueClient queueClient = new QueueClient(config.DataConnectionString, config.EmailQueueName);
+                QueueClient queueClient = new QueueClient(_azureConfiguration.DataConnectionString, _azureConfiguration.EmailQueueName);
 
                 queueClient.CreateIfNotExists();
 
@@ -31,9 +34,9 @@ namespace Quiplogs.Notifications.Queue.Services
                     await queueClient.SendMessageAsync(message);
                 }
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                //log exception
+                throw exception;
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace Quiplogs.Notifications.Utilities.Configuration
 {
-    public class Security
+    public class SecurityConfiguration
     {
         public string Key { get; set; }
     }

@@ -20,6 +20,7 @@ namespace Quiplogs.Notifications.Send
             builder.RegisterType<EmailService>()
                 .As<IEmailService>()
                 .WithParameter(new TypedParameter(typeof(IConfiguration), this.configuration));
+            builder.RegisterType<SendService>().As<ISendService>();            
 
             builder.RegisterModule(new QueueModule(this.configuration));
         }

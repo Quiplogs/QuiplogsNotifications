@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
-
-namespace Quiplogs.Notifications.Email.Interfaces
+﻿namespace Quiplogs.Notifications.Email.Interfaces
 {
     public interface IEmail
     {
-        public string TemplateId { get; set; }
-        public string FromEmailAddress { get; set; }
-        public string FromName { get; set; }
-        public string ToEmailAddress { get; set; }
-        public string ToName { get; set; }
-        Dictionary<string, string> ReplacementTags { get; set; }
+        string Subject { get; set; }
+        string FromEmailAddress { get; set; }
+        string FromName { get; set; }
+        string ToEmailAddress { get; set; }
+        string ToName { get; set; }        
     }
 }

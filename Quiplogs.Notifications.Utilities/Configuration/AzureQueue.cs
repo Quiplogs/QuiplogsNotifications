@@ -1,6 +1,6 @@
 ﻿namespace Quiplogs.Notifications.Utilities.Configuration
 {
-    public class AzureQueue
+    public class AzureQueueConfiguration
     {
         public string DataConnectionString { get; set; }
 

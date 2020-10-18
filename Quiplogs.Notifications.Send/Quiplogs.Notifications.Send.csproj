@@ -14,8 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Quiplogs.Notifications.Email\Quiplogs.Notifications.Email.csproj" />
-    <ProjectReference Include="..\Quiplogs.Notifications.Queue\Quiplogs.Notifications.Queue.csproj" />
-    <ProjectReference Include="..\Quiplogs.Notifications.Utilities\Quiplogs.Notifications.Utilities.csproj" />
   </ItemGroup>
 
 </Project>
