@@ -9,7 +9,7 @@ This project produces TWO Nuget Packages.
   
 ## Requirements
 
-  1. Azure Subscription with Azure storage for the Queue
+  1. Azure Subscription with Azure storage to utilize the Queue
   2. SendGrid Account  
  
 ## Quiplogs.Notifications.Send
@@ -63,8 +63,8 @@ Installing using this package is done in 4 steps
       ReplacementTags = tags
   };
 
-  var emailService = container.Resolve<ISendService>();
-  emailService.SendNotification(email);
+  var sendService = container.Resolve<ISendService>();
+  sendService.SendNotification(email);
   ```
   
  ## Quiplogs.Notification.Process
