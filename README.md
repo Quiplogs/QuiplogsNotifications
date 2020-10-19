@@ -1,4 +1,4 @@
-# Quiplogs Notifications
+# Quiplogs Notifications (Email only. SMS support coming soon)
 
 This project arose around a need to be able to send Notifications to an Azure queue and then have that queue be processed and sent off to a third party for porcessing (SendGrid).
 
