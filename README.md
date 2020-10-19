@@ -7,6 +7,10 @@ This project produces TWO Nuget Packages.
   1. Quiplogs.Notifications.Send - The package takes an type of IEmail and send it to the Azure Queue
   2. Quiplogs.Notifications.Process - The package processes a queue item and sends it off to the SendGrid API
   
+## Requirements
+
+  1. Azure Subscription with Azure storage for the Queue
+  2. SendGrid Account  
  
 ## Quiplogs.Notifications.Send
 
