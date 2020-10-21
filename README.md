@@ -28,7 +28,7 @@ Installing using this package is done in 4 steps
         "EmailQueueName": "queue_name"
       },
       "Security": {
-        "Key": "ecryption_key"
+        "Key": "ecryption_key" e.g. b14ca5898a4e4133bbce2ea2315a1916
       }
     }
   ```
@@ -69,6 +69,62 @@ Installing using this package is done in 4 steps
   
  ## Quiplogs.Notification.Process
  
- Still in progress*
+ Installing using this package is done in 6 steps
  
- Receive an Azure queue message and send it off to SendGrid API
+  1. Install nuget package Quiplogs.Notification.Process
+  
+  2. Add Configuration Settings
+    - SENDGRID_API_KEY (Your generated SendGrid API Key)
+    - SECURITY_KEY (same security token you used in the "Send module" e.g. b14ca5898a4e4133bbce2ea2315a1916)
+  
+  3. Reference the following packages
+  
+  ```bash
+  using AzureFunctions.Autofac;
+  using Quiplogs.Notifications.Process;
+  using Quiplogs.Notifications.Process.Interfaces;
+  ```
+  4. Add "[DependencyInjectionConfig(typeof(ProcessNotificationModule))]" as an attribute to your Azure Queue function class
+  
+  5. Change Run() Signature
+    - inject ISendGridService
+    - change input from string to byte[] (email gets stored as byte[] in queue)
+    - change queue name to where you store emails
+    - set connection config variable
+  
+  ```bash
+  [QueueTrigger("set yhe queue name for your email", Connection = "set connection string key")] byte[] encryptedMail, [Inject] ISendGridService sendGridService, ILogger log)
+  ```
+  
+  6. Call send grid service
+  
+  ```bash
+  sendGridService.SendMail(encryptedMail);
+  ```
+  
+  The function as a whole will look like the following example
+  
+  ```bash
+  using AzureFunctions.Autofac;
+  using Quiplogs.Notifications.Process;
+  using Quiplogs.Notifications.Process.Interfaces;
+  using Microsoft.Azure.WebJobs;
+  using Microsoft.Extensions.Logging;
+
+  namespace FunctionApp1
+  {
+      public static class Function1
+      {
+          [DependencyInjectionConfig(typeof(ProcessNotificationModule))]
+          public static class EmailQueueFunction
+          {
+              [FunctionName("EmailQueueFunction")]
+              public static void Run([QueueTrigger("twilioemailqueue", Connection = "AzureWebJobsStorage")] byte[] encryptedMail, [Inject] ISendGridService sendGridService, ILogger log)
+              {
+                  sendGridService.SendMail(encryptedMail);
+                  log.LogInformation($"Emailed sent");
+              }
+          }
+      }
+  }
+  ```
