@@ -7,6 +7,7 @@
     <Product>Quiplogs Notifications</Product>
     <Description>Utilities utilised by other Quiplogs.Notification nuget packages</Description>
     <RepositoryUrl>https://github.com/Sl1ver/QuiplogsNotifications.git</RepositoryUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
 </Project>

@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RepositoryUrl>https://github.com/Sl1ver/QuiplogsNotifications.git</RepositoryUrl>
+    <Authors>Jonathan Meyer</Authors>
+    <Company>Quiplogs</Company>
+    <Product>Quiplogs Notifications</Product>
+    <Description>Notifications Azure Queue Service</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
