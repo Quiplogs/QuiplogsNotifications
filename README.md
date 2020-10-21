@@ -71,7 +71,7 @@ Installing using this package is done in 4 steps
  
  Installing using this package is done in 6 steps
  
-  1. Install nuget package Quiplogs.Notification.Process
+  1. Install nuget package Quiplogs.Notification.Process 1.0.1
   
   2. Add Configuration Settings
     - SENDGRID_API_KEY (Your generated SendGrid API Key)
