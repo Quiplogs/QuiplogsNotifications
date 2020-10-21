@@ -113,18 +113,15 @@ Installing using this package is done in 4 steps
 
   namespace FunctionApp1
   {
-      public static class Function1
-      {
-          [DependencyInjectionConfig(typeof(ProcessNotificationModule))]
-          public static class EmailQueueFunction
-          {
-              [FunctionName("EmailQueueFunction")]
-              public static void Run([QueueTrigger("twilioemailqueue", Connection = "AzureWebJobsStorage")] byte[] encryptedMail, [Inject] ISendGridService sendGridService, ILogger log)
-              {
-                  sendGridService.SendMail(encryptedMail);
-                  log.LogInformation($"Emailed sent");
-              }
-          }
-      }
+        [DependencyInjectionConfig(typeof(ProcessNotificationModule))]
+        public static class EmailQueueFunction
+        {
+            [FunctionName("EmailQueueFunction")]
+            public static void Run([QueueTrigger("twilioemailqueue", Connection = "AzureWebJobsStorage")] byte[] encryptedMail, [Inject] ISendGridService sendGridService, ILogger log)
+            {
+                sendGridService.SendMail(encryptedMail);
+                log.LogInformation($"Emailed sent");
+            }
+        }
   }
   ```
