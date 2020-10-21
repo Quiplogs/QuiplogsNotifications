@@ -8,15 +8,15 @@ namespace Quiplogs.Notifications.Process.Services
     {
         public SendGridConfiguration CheckConfigurtionVariables()
         {
-            var twilioConfiguration = new SendGridConfiguration();
+            var sendGridConfiguration = new SendGridConfiguration();
 
-            if (string.IsNullOrWhiteSpace(twilioConfiguration.APIKey))
+            if (string.IsNullOrWhiteSpace(sendGridConfiguration.APIKey))
                 throw new Exception("No Twilio SendGrid API Key has been set.");
 
-            if (string.IsNullOrWhiteSpace(twilioConfiguration.SecurityKey))
+            if (string.IsNullOrWhiteSpace(sendGridConfiguration.SecurityKey))
                 throw new Exception("No Decryption key has been set.");
 
-            return twilioConfiguration;
+            return sendGridConfiguration;
         }
     }
 }

@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quiplogs.Notifications.Proc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quiplogs.Notifications.Queue", "Quiplogs.Notifications.Queue\Quiplogs.Notifications.Queue.csproj", "{CCE35A52-CB8B-490F-93BA-BC0F059319BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiplogs.Notifications.ConsoleApp", "Quiplogs.Notifications.ConsoleApp\Quiplogs.Notifications.ConsoleApp.csproj", "{A8E46BFF-8B01-4288-BBBC-1364BD6DAA74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quiplogs.Notifications.ConsoleApp", "Quiplogs.Notifications.ConsoleApp\Quiplogs.Notifications.ConsoleApp.csproj", "{A8E46BFF-8B01-4288-BBBC-1364BD6DAA74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiplogs.Notifications.Utilities", "Quiplogs.Notifications.Utilities\Quiplogs.Notifications.Utilities.csproj", "{D0C067A2-369C-4B8F-BD61-6232D549311F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quiplogs.Notifications.Utilities", "Quiplogs.Notifications.Utilities\Quiplogs.Notifications.Utilities.csproj", "{D0C067A2-369C-4B8F-BD61-6232D549311F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiplogs.Notifications.AzureFunction", "Quiplogs.Notifications.AzureFunction\Quiplogs.Notifications.AzureFunction.csproj", "{93A78EAD-DE2C-47A7-94A0-B19EA817A7E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{D0C067A2-369C-4B8F-BD61-6232D549311F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0C067A2-369C-4B8F-BD61-6232D549311F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0C067A2-369C-4B8F-BD61-6232D549311F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93A78EAD-DE2C-47A7-94A0-B19EA817A7E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93A78EAD-DE2C-47A7-94A0-B19EA817A7E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93A78EAD-DE2C-47A7-94A0-B19EA817A7E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93A78EAD-DE2C-47A7-94A0-B19EA817A7E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

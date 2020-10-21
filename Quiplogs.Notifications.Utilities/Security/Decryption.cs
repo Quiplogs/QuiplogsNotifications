@@ -7,10 +7,10 @@ namespace Quiplogs.Notifications.Utilities.Security
 {
     public static class Decryption
     {
-        public static string DecryptString(string key, string text)
+        public static string DecryptString(string key, byte[] text)
         {
             byte[] iv = new byte[16];
-            byte[] buffer = Convert.FromBase64String(text);
+            byte[] buffer = text;
 
             using (Aes aes = Aes.Create())
             {

@@ -1,15 +1,20 @@
 ﻿using Autofac;
+using AzureFunctions.Autofac.Configuration;
 using Quiplogs.Notifications.Process.Interfaces;
 using Quiplogs.Notifications.Process.Services;
 
 namespace Quiplogs.Notifications.Process
 {
-    public class ProcessNotificationModule : Module
+    public class ProcessNotificationModule
     {
-        protected override void Load(ContainerBuilder builder)
+        public ProcessNotificationModule(string functionName)
         {
-            builder.RegisterType<SendGridService>().As<ISendGridService>();
-            builder.RegisterType<CheckConfigurationService>().As<ICheckConfigurationService>();
+            DependencyInjection.Initialize(builder =>
+            {
+                builder.RegisterType<SendGridService>().As<ISendGridService>();
+                builder.RegisterType<CheckConfigurationService>().As<ICheckConfigurationService>();
+
+            }, functionName);
         }
     }
 }

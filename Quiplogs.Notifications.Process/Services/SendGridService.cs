@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using Quiplogs.Notifications.Email.Models;
-using SendGrid;
+﻿using SendGrid;
+using Newtonsoft.Json;
 using SendGrid.Helpers.Mail;
 using System.Threading.Tasks;
+using Quiplogs.Notifications.Email.Models;
 using Quiplogs.Notifications.Process.Interfaces;
 using Quiplogs.Notifications.Process.Models;
 using Quiplogs.Notifications.Utilities.Security;
@@ -13,20 +13,20 @@ namespace Quiplogs.Notifications.Process.Services
     {
         private readonly SendGridClient _sendGridClient;
         private readonly ICheckConfigurationService _checkConfigurationService;
-        private readonly SendGridConfiguration _twilioConfiguration;
+        private readonly SendGridConfiguration _sendGridConfiguration;
 
         public SendGridService(ICheckConfigurationService checkConfigurationService)
         {
             _checkConfigurationService = checkConfigurationService;
-            _twilioConfiguration = _checkConfigurationService.CheckConfigurtionVariables();
+            _sendGridConfiguration = _checkConfigurationService.CheckConfigurtionVariables();
 
-            _sendGridClient = new SendGridClient(_twilioConfiguration.APIKey);
+            _sendGridClient = new SendGridClient(_sendGridConfiguration.APIKey);
         }
 
-        public async Task SendMail(string queueMessage)
+        public async Task SendMail(byte[] queueMessage)
         {
             //Decrypt email
-            var decryptedMail = Decryption.DecryptString(_twilioConfiguration.SecurityKey, queueMessage);
+            var decryptedMail = Decryption.DecryptString(_sendGridConfiguration.SecurityKey, queueMessage);
 
             var sendGridMessage = new SendGridMessage();
 

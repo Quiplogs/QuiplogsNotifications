@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.0.0" />
+    <PackageReference Include="AzureFunctions.Autofac" Version="4.0.1" />
     <PackageReference Include="SendGrid" Version="9.21.0" />
   </ItemGroup>
 
