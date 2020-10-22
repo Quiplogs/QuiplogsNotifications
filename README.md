@@ -20,7 +20,7 @@ Installing using this package is done in 4 steps
 
   2. Add configuration to appsettings.json
   
-  ```bash
+  ```json
   "AppSettings": {
     "QuiplogsNotifications": {
       "Azure": {
@@ -35,7 +35,7 @@ Installing using this package is done in 4 steps
   
   3. Register Autofac and pass in IConfiguration
   
-  ```bash
+  ```csharp
   IConfiguration Configuration = new ConfigurationBuilder()
         .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
         .Build();
@@ -47,7 +47,7 @@ Installing using this package is done in 4 steps
   
   4. Create a email and send (This example uses the Templated Email from SendGrid)
   
-  ```bash
+  ```csharp
   var tags = new Dictionary<string, string>();
   tags.Add("first_name", "first name");
   tags.Add("last_name", "last name");
@@ -79,7 +79,7 @@ Installing using this package is done in 4 steps
   
   3. Reference the following packages
   
-  ```bash
+  ```csharp
   using AzureFunctions.Autofac;
   using Quiplogs.Notifications.Process;
   using Quiplogs.Notifications.Process.Interfaces;
@@ -92,19 +92,19 @@ Installing using this package is done in 4 steps
       - change queue name to where you store emails
       - set connection config variable
   
-  ```bash
+  ```csharp
   [QueueTrigger("set yhe queue name for your email", Connection = "set connection string key")] byte[] encryptedMail, [Inject] ISendGridService sendGridService, ILogger log)
   ```
   
   6. Call send grid service
   
-  ```bash
+  ```csharp
   sendGridService.SendMail(encryptedMail);
   ```
   
   The function as a whole will look like the following example
   
-  ```bash
+  ```csharp
   using AzureFunctions.Autofac;
   using Quiplogs.Notifications.Process;
   using Quiplogs.Notifications.Process.Interfaces;
