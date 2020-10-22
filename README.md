@@ -86,11 +86,11 @@ Installing using this package is done in 4 steps
   ```
   4. Add "[DependencyInjectionConfig(typeof(ProcessNotificationModule))]" as an attribute to your Azure Queue function class
   
-  5. Change Run() Signature
-    - inject ISendGridService
-    - change input from string to byte[] (email gets stored as byte[] in queue)
-    - change queue name to where you store emails
-    - set connection config variable
+  5. - Change Run() Signature
+      - inject ISendGridService
+      - change input from string to byte[] (email gets stored as byte[] in queue)
+      - change queue name to where you store emails
+      - set connection config variable
   
   ```bash
   [QueueTrigger("set yhe queue name for your email", Connection = "set connection string key")] byte[] encryptedMail, [Inject] ISendGridService sendGridService, ILogger log)
