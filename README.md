@@ -84,7 +84,11 @@ Installing using this package is done in 4 steps
   using Quiplogs.Notifications.Process;
   using Quiplogs.Notifications.Process.Interfaces;
   ```
-  4. Add "[DependencyInjectionConfig(typeof(ProcessNotificationModule))]" as an attribute to your Azure Queue function class
+  4. Add the following as an attribute to your Azure Queue function class
+    
+    ```csharp
+    [DependencyInjectionConfig(typeof(ProcessNotificationModule))]
+    ```
   
   5. Change Run() Signature
       - inject ISendGridService
