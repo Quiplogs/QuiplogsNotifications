@@ -74,8 +74,8 @@ Installing using this package is done in 4 steps
   1. Install nuget package Quiplogs.Notification.Process 1.0.1
   
   2. Add Configuration Settings
-    - SENDGRID_API_KEY (Your generated SendGrid API Key)
-    - SECURITY_KEY (same security token you used in the "Send module" e.g. b14ca5898a4e4133bbce2ea2315a1916)
+      - SENDGRID_API_KEY (Your generated SendGrid API Key)
+      - SECURITY_KEY (same security token you used in the "Send module" e.g. b14ca5898a4e4133bbce2ea2315a1916)
   
   3. Reference the following packages
   
@@ -86,7 +86,7 @@ Installing using this package is done in 4 steps
   ```
   4. Add "[DependencyInjectionConfig(typeof(ProcessNotificationModule))]" as an attribute to your Azure Queue function class
   
-  5. - Change Run() Signature
+  5. Change Run() Signature
       - inject ISendGridService
       - change input from string to byte[] (email gets stored as byte[] in queue)
       - change queue name to where you store emails
