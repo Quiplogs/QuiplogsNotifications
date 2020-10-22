@@ -97,7 +97,7 @@ Installing using this package is done in 4 steps
       - set connection config variable
   
   ```csharp
-  [QueueTrigger("set yhe queue name for your email", Connection = "set connection string key")] byte[] encryptedMail, [Inject] ISendGridService sendGridService, ILogger log)
+  [QueueTrigger("set the queue name for your email", Connection = "set connection string key")] byte[] encryptedMail, [Inject] ISendGridService sendGridService, ILogger log)
   ```
   
   6. Call send grid service
