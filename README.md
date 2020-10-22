@@ -14,7 +14,7 @@ This project produces TWO Nuget Packages.
  
 ## Quiplogs.Notifications.Send
 
-Installing using this package is done in 4 steps
+Installing & Configuring this package is done in 4 steps
 
   1. Install the Quiplogs.Notifications.Send nuget package
 
@@ -69,7 +69,7 @@ Installing using this package is done in 4 steps
   
  ## Quiplogs.Notification.Process
  
- Installing using this package is done in 6 steps
+ Installing & Configuring this package is done in 6 steps
  
   1. Install nuget package Quiplogs.Notification.Process 1.0.1
   
